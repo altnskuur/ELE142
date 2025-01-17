@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_1_Variables/build/CMakeFiles/VARIABLES.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_1_Variables/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_1_Variables/build/CMakeFiles/rebuild_cache.dir
