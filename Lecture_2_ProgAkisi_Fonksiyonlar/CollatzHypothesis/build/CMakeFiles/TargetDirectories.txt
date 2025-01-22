@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/CollatzHypothesis/build/CMakeFiles/COLLATZ.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/CollatzHypothesis/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/CollatzHypothesis/build/CMakeFiles/rebuild_cache.dir

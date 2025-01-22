@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/build/CMakeFiles/PROGAKIS_FONK.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_2_ProgAkisi_Fonksiyonlar/build/CMakeFiles/rebuild_cache.dir
