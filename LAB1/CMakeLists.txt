@@ -1,0 +1,14 @@
+project(LAB1 LANGUAGES C CXX)
+
+cmake_minimum_required(VERSION 3.10)
+
+set(SOURCES 
+    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+
+add_executable(LAB1 ${SOURCES})
+
+set_target_properties(LAB1 PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED YES
+    OUTPUT_NAME 181201033_lab1
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
