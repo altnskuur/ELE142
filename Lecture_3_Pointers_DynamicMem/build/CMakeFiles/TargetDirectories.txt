@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_3_Pointers_DynamicMem/build/CMakeFiles/MEMORY.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_3_Pointers_DynamicMem/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_3_Pointers_DynamicMem/build/CMakeFiles/rebuild_cache.dir

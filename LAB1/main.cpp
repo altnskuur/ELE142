@@ -67,4 +67,4 @@ bool inside(int X, int Y, int Z, int R){
     }
 }
 
-// bil142.tobbetü@gmail.com
+// bil142.tobbetu@gmail.com
