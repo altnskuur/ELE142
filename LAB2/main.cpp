@@ -12,7 +12,7 @@ int main(){
     // fill random to the array dynamically
     for(int i = 0; i < c_elemannumber; i++){
 
-        *(arr+i) = rand()%100;
+        *(arr+i) = 1 + rand() % 100;
     }
 
     // print elements of random array with weights
