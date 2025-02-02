@@ -4,21 +4,9 @@ int main(){
 
     // array_processes();
     // string_processes();
-    pointer_processes();
+    // pointer_processes();
+    dma_processes();
     return 0;
-}
-
-int topla(int array[], int boyut){
-
-    int sum = 0;
-    // int boyut = sizeof(array) / sizeof(array[0]); // ERROR!
-    for(int i = 0; i < boyut; i++){
-
-        sum += array[i];
-    }
-
-    array[0] = 158; // value of array elemans can change in function because of pass by pointer
-    return sum;
 }
 
 void array_processes(void){
@@ -64,6 +52,19 @@ void array_processes(void){
         std::cout << element << ", "; // 5, 5, 5, 5, 5, 5, 5, 2, 2, 2
     }
     std::cout << std::endl;
+}
+
+int topla(int array[], int boyut){
+
+    int sum = 0;
+    // int boyut = sizeof(array) / sizeof(array[0]); // ERROR!
+    for(int i = 0; i < boyut; i++){
+
+        sum += array[i];
+    }
+
+    array[0] = 158; // value of array elemans can change in function because of pass by pointer
+    return sum;
 }
 
 void string_processes(void){
@@ -112,4 +113,135 @@ void pointer_processes(void){
     std::cout << "Address of i_val: " << &i_val << std::endl;
     int *p_val = &i_val; // point to variable, need to give an address  
     std::cout << "Adress of p_val: " << p_val << std::endl;
+    std::cout << "------------------" << std::endl;
+
+    int *p_val1, i_val1 = 1, i_val2 = 2;
+    p_val1 = &i_val1;
+    std::cout << "Value of p_val1: " << *p_val1 << "\tAddress of p_val1: " << p_val1 << std::endl;
+    std::cout << "Value of i_val1: " << i_val1 << "\tAddress of i_val1: " << &i_val1 << std::endl;
+    std::cout << "Value of i_val2: " << i_val2 << "\tAddress of i_val2: " << &i_val2 << std::endl;
+    std::cout << "------------------" << std::endl;
+    
+    p_val1 = &i_val2;
+    std::cout << "Value of p_val1: " << *p_val1 << "\tAddress of p_val1: " << p_val1 << std::endl;
+    std::cout << "Value of i_val1: " << i_val1 << "\tAddress of i_val1: " << &i_val1 << std::endl;
+    std::cout << "Value of i_val2: " << i_val2 << "\tAddress of i_val2: " << &i_val2 << std::endl;
+    std::cout << "------------------" << std::endl;
+
+    i_val2 = 22; 
+    std::cout << "Value of p_val1: " << *p_val1 << "\tAddress of p_val1: " << p_val1 << std::endl;
+    std::cout << "Value of i_val2: " << i_val2 << "\tAddress of i_val2: " << &i_val2 << std::endl;
+    std::cout << "------------------" << std::endl;
+
+    std::cout << "Value of i_val2: " << i_val2 << "\tAddress of i_val2: " << &i_val2 << std::endl;
+    value_inc(i_val2); // copy i_val2 value to the val variable that is in to the value_inc function.
+    std::cout << "Value of i_val2: " << i_val2 << "\tAddress of i_val2: " << &i_val2 << std::endl;
+    std::cout << "------------------" << std::endl; 
+
+    std::cout << "Value of p_val1: " << *p_val1 << "\tAddress of p_val1: " << p_val1 << std::endl;
+    pointer_inc(p_val1); // copy p_val1 address to the addr pointer variable that is in to the pointer_inc fuction.
+    std::cout << "Value of p_val1: " << *p_val1 << "\tAddress of p_val1: " << p_val1 << std::endl;
+    std::cout << "------------------" << std::endl; 
+
+    // Arrays with pointers
+    int arr[] = {0, 11, 22, 33, 44, 55};
+    /*
+    * accessing values:
+    * arr[0] -> 0
+    * arr[1] -> 11
+    * ...
+    * but what is the meaning of only "arr"?
+    * "arr" is the starting address of array
+    * int *p = arr; -> meaningfull
+    * and also values accessable with this way;
+    * *(arr) -> 0
+    * *(arr+1) -> 11
+    * *(arr+2) -> 22
+    * ...
+    * */
+    std::cout << "Elemans of arr[]: ";
+    for(int i = 0; i < sizeof(arr)/ sizeof(arr[0]); i++){
+
+        std::cout << *(arr + i) << ", ";
+    }
+    std::cout << "------------------" << std::endl; 
+}
+
+// pass by value
+void value_inc(int val){
+
+    std::cout << "Value of val: " << val << "\tAddress of val: " << &val << std::endl;
+    // increment val value in the function
+    ++val;
+} // delete all variables
+
+// pass by referance
+void pointer_inc(int *addr){
+
+    std::cout << "Value of addr: " << *addr << "\tAddress of addr: " << addr << std::endl;
+    // increment *addr value in the function
+    ++(*addr);
+    // address of addr is the same address with p_val1 in the main function. Because of this, all possible changes with addr can change p_val1 pointer variable in the main function. 
+} // delete all variables
+// even if all of variables deletes, processes in this function are in the address side. because of this, variables can delete but changes can not delete.
+
+/* DYNAMIC MEMORY ALLOCATION */
+void dma_processes(void){
+
+    /*
+    * The stack is a memory area where temporary data (such as local variables, parameters, and return addresses) 
+    * is stored and automatically managed during program execution. When a function is called, 
+    * the relevant data is pushed onto the stack; when the function finishes, this data is automatically removed.
+    * 
+    * The heap is a memory region used for dynamic memory allocation during program execution. 
+    * In this area, data allocated using operations like new or malloc is stored. 
+    * Memory in the heap is not managed automatically; therefore, the allocated memory must be manually 
+    * freed using delete or free.
+    * */
+    int *dma_var = new int; // definition of dma
+    delete dma_var; // this is not meaning of deleting dma_var. this means making free value in the address of dma_var.
+    std::cout << "Value of dma_var: " << *dma_var << "\tAddress of dma_var: " << dma_var << std::endl;
+
+    int *dma_var2 = new int;
+    *dma_var2 = 256;
+    std::cout << "Value of dma_var2: " << *dma_var2 << "\tAddress of dma_var2: " << dma_var2 << std::endl;
+    std::cout << "------------------" << std::endl; 
+    *dma_var = 330;
+    std::cout << "Value of dma_var: " << *dma_var << "\tAddress of dma_var: " << dma_var << std::endl;
+    std::cout << "Value of dma_var2: " << *dma_var2 << "\tAddress of dma_var2: " << dma_var2 << std::endl;
+    // both of them shows same address. because of this, only one change will changes other one
+    std::cout << "------------------" << std::endl; 
+
+    // if not cut the connection between dma_var and address of dma_var, it will be dangerous -> data lose
+    dma_var = nullptr; // cut the connection between dma_var and the address of dma_var
+    // *dma_var = 340; -> ERROR
+    if(nullptr != dma_var){
+        delete dma_var;
+    } // controlling mechanism
+    // before to nullptr assignment, control delete operation
+    dma_var = new int;
+    *dma_var = 110; 
+    std::cout << "Value of dma_var: " << *dma_var << "\tAddress of dma_var: " << dma_var << std::endl;
+    std::cout << "Value of dma_var2: " << *dma_var2 << "\tAddress of dma_var2: " << dma_var2 << std::endl;
+    std::cout << "------------------" << std::endl; 
+
+    /*
+    dma_var = dma_var2; -> FORBIDDEN (memory leak)
+    dma_var address is full with the values. if you do not clear that region, trash values will not reachable and it will be stay in that region.
+    before the process, you need to clear that region.
+    */
+    delete dma_var;
+    dma_var = dma_var2;
+    std::cout << "Value of dma_var: " << *dma_var << "\tAddress of dma_var: " << dma_var << std::endl;
+    std::cout << "Value of dma_var2: " << *dma_var2 << "\tAddress of dma_var2: " << dma_var2 << std::endl;
+    std::cout << "------------------" << std::endl; 
+
+    delete dma_var;
+    delete dma_var2;
+
+    // Arrays with dynamic memory allocation
+    int *dma_arr = new int[10]; // new int(10) -> SAME
+    dma_arr[0] = 5;
+    delete[] dma_arr;
+    dma_arr = nullptr;
 }

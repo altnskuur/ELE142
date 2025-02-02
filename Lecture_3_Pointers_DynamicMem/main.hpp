@@ -14,6 +14,12 @@ char str1[] = {'E', 'L', 'E', '1', '4', '2', '\0'}; // char array - string
 std::string str2 = "ELE142"; // automatically added '\0' 
 
 void array_processes(void);
-void string_processes(void);
-void pointer_processes(void);
 int topla(int array[], int boyut);
+
+void string_processes(void);
+
+void pointer_processes(void);
+void value_inc(int val);
+void pointer_inc(int *addr);
+
+void dma_processes(void);
