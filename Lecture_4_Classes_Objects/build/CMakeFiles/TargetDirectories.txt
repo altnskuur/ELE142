@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_4_Classes_Objects/build/CMakeFiles/LEC4.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_4_Classes_Objects/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_4_Classes_Objects/build/CMakeFiles/rebuild_cache.dir
