@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_5_Objects_OArrays/build/CMakeFiles/LEC5.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_5_Objects_OArrays/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/Lecture_5_Objects_OArrays/build/CMakeFiles/rebuild_cache.dir

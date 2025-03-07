@@ -1,0 +1,3 @@
+D:/altnskuur/TOBB/ELE 142/repos/LAB6/build/CMakeFiles/LAB6.dir
+D:/altnskuur/TOBB/ELE 142/repos/LAB6/build/CMakeFiles/edit_cache.dir
+D:/altnskuur/TOBB/ELE 142/repos/LAB6/build/CMakeFiles/rebuild_cache.dir
